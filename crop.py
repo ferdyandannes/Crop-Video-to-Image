@@ -27,12 +27,12 @@ def FrameCapture(path):
         if(count == 0):
             save_dir = path.split(".")[0]
             check_dir(save_dir)
-            check_dir(os.path.join(save_dir, "images"))
+            check_dir(os.path.join(save_dir, "Images"))
         print(save_dir)
-        save = os.path.join(save_dir, "images/"+str(count).zfill(4)+".png")
+        save = os.path.join(save_dir, "Images/"+str(count).zfill(4)+".png")
         print(save)
-        a = 650-385
-        crop_img = image[a: a+385, 0: 1280]
+        a = 585-385
+        crop_img = image[a: a+385, 215: 1495]
         cv2.imwrite(save, crop_img)
 
         count += 1
@@ -41,4 +41,4 @@ def FrameCapture(path):
 # Driver Code
 if __name__ == '__main__':
     # Calling the function
-    FrameCapture("D:/Accident/22.mp4")
+    FrameCapture("2.mp4")
